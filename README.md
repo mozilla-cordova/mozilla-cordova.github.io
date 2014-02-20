@@ -1,6 +1,10 @@
-This is a repo for Mozilla to track our Cordova work. We do all of our
-work inside the `mozilla-cordova` organization on github. Each Cordova
-plugin is a separate repo forked from the official Apache repo.
+This is a repo for Mozilla to track our Cordova work. It is served at
+http://mozilla-cordova.github.io/ and aggregates all the issues/PRs
+across the repos inside mozilla-cordova. Each Cordova plugin is a
+separate repo forked from the official Apache repo.
+
+You should file issues for a plugin at the plugin's repository, not
+here.
 
 ## Installing Plugins
 
