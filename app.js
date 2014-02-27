@@ -4,20 +4,37 @@ var dom = React.DOM;
 var App = React.createClass({
   getInitialState: function() {
     return { issues: [],
-             onlyPRs: false,
-             filter: '' };
+             repos: [] };
   },
 
   componentDidMount: function() {
-    if(window.CORDOVA_ISSUES) {
-      var issues = window.CORDOVA_ISSUES.map(function(issue) {
+    if(window.CORDOVA_STATUS) {
+      var issues = window.CORDOVA_STATUS.issues.map(function(issue) {
         issue.created_at = new Date(issue.created_at);
         issue.updated_at = new Date(issue.updated_at);
         return issue;
       });
 
-      this.setState({ issues: issues });
+      this.setState({ issues: issues,
+                      repos: window.CORDOVA_STATUS.repos });
     }
+  },
+
+  render: function() {
+    return dom.div(
+      { className: 'app' },
+      dom.h1(null, 'Repos'),
+      RepoList({ repos: this.state.repos }),
+      dom.h1(null, 'Issues'),
+      IssueList({ issues: this.state.issues })
+    );
+  }
+});
+
+var IssueList = React.createClass({
+  getInitialState: function() {
+    return { onlyPRs: false,
+             filter: '' };
   },
 
   togglePRs: function() {
@@ -30,7 +47,7 @@ var App = React.createClass({
   
   render: function() {
     var s = this.state;
-    var issues = Array.prototype.slice.call(this.state.issues);
+    var issues = Array.prototype.slice.call(this.props.issues);
     issues.sort(function(a, b) {
       return a.updated_at < b.updated_at ? 1 : -1;
     });
@@ -40,7 +57,7 @@ var App = React.createClass({
       Toolbar({ togglePRs: this.togglePRs,
                 onlyPRs: s.onlyPRs,
                 onFilter: this.applyFilter,
-                filter: this.state.fitler }),
+                filter: this.state.filter }),
       dom.ul(
         { className: 'issues' },
         issues.map(function(issue) {
@@ -68,6 +85,29 @@ var App = React.createClass({
           );
         }.bind(this))
       )
+    );
+  }
+});
+
+var RepoList = React.createClass({
+  render: function() {
+    return dom.ul(
+      null,
+      this.props.repos.map(function(repo) {
+        return dom.li(
+          null,
+          dom.a({ href: "http://github.com/mozilla-cordova/" + repo.repo },
+                repo.repo),
+          ' ',
+          (repo.status.indexOf('out-of-date') !== -1 ? 
+           dom.span({ className: 'label label-danger' }, 'out-of-date') :
+           null),
+          ' ',
+          (repo.status.indexOf('new-commits') !== -1 ? 
+           dom.span({ className: 'label label-success' }, 'new-commits') :
+           null)
+        );
+      })
     );
   }
 });

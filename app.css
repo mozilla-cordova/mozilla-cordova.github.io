@@ -20,6 +20,16 @@ header h1 {
     top: -.2em;
 }
 
+.app h1 {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 5px;
+    margin-top: 1em;
+}
+
+.app h1:first-of-type{
+    margin-top: 0;
+}
+
 .toolbar {
     margin-bottom: 1em;
 }
