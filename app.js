@@ -80,7 +80,7 @@ var IssueList = React.createClass({
             ' ',
             dom.span({ className: "label label-default" }, issue.repo),
             ' ',
-            issue.pull_request.html_url ? 
+            (issue.pull_request && issue.pull_request.html_url) ? 
               dom.span({ className: "label label-danger" }, 'PR') : null
           );
         }.bind(this))
