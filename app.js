@@ -8,16 +8,34 @@ var App = React.createClass({
   },
 
   componentDidMount: function() {
+    var issues = [],
+      repos = [];
+
     if(window.CORDOVA_STATUS) {
-      var issues = window.CORDOVA_STATUS.issues.map(function(issue) {
+      issues = issues.concat(CORDOVA_STATUS.issues.map(function(issue) {
         issue.created_at = new Date(issue.created_at);
         issue.updated_at = new Date(issue.updated_at);
+        issue.origin = 'github';
         return issue;
-      });
+      }));
 
-      this.setState({ issues: issues,
-                      repos: window.CORDOVA_STATUS.repos });
+      repos = window.CORDOVA_STATUS.repos;
     }
+
+    if(window.JIRA_ISSUES) {
+      issues = issues.concat(JIRA_ISSUES.issues.map(function(issue) {
+        issue.created_at = new Date(issue.fields.created);
+        issue.updated_at = new Date(issue.fields.updated);
+        issue.title = issue.fields.summary;
+        issue.html_url = 'https://issues.apache.org/jira/browse/' + issue.key;
+        issue.origin = 'jira';
+        issue.status = issue.fields.status.name;
+        return issue;
+      }));
+    }
+
+    this.setState({ issues: issues,
+      repos: repos });
   },
 
   render: function() {
@@ -57,7 +75,7 @@ var IssueList = React.createClass({
       Toolbar({ togglePRs: this.togglePRs,
                 onlyPRs: s.onlyPRs,
                 onFilter: this.applyFilter,
-                filter: this.state.filter }),
+                filter: this.state.filter.toLowerCase() }),
       dom.ul(
         { className: 'issues' },
         issues.map(function(issue) {
@@ -66,21 +84,22 @@ var IssueList = React.createClass({
           }
 
           if(s.filter && 
-             issue.title.indexOf(s.filter) === -1 &&
-             issue.repo.indexOf(s.filter) === -1) {
+             issue.title.toLowerCase().indexOf(s.filter) === -1 &&
+             issue.repo.toLowerCase().indexOf(s.filter) === -1) {
             return null;
           }
 
           return dom.li(
-            { className: 'issue' }, 
+            { className: 'issue' },
+            dom.i({ className: "icon " + issue.origin }),
             dom.a(
               { href: issue.html_url },
               issue.title + ' (' + moment(issue.updated_at).format('MM-DD-YYYY') + ')'
             ),
-            ' ',
-            dom.span({ className: "label label-default" }, issue.repo),
-            ' ',
-            (issue.pull_request && issue.pull_request.html_url) ? 
+            issue.repo ?
+              dom.span({ className: "label label-default" }, issue.repo) :
+              dom.span({ className: "label label-info" }, issue.status),
+            (issue.pull_request && issue.pull_request.html_url) ?
               dom.span({ className: "label label-danger" }, 'PR') : null
           );
         }.bind(this))

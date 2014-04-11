@@ -50,9 +50,31 @@ ul.issues {
 }
 
 ul.issues li {
-    padding: 1em;
+    padding: .8em 1em;
+    line-height: 16px;
+}
+
+ul.issues .label {
+    margin: 0 1em;
 }
 
 ul.issues li:nth-of-type(2n) {
     background-color: #fafafa;
+}
+
+i.icon {
+  display: inline-block;
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 1em;
+  vertical-align: middle;
+}
+
+.icon.jira {
+  background-image: url(img/jira.ico);
+}
+
+.icon.github {
+  background-image: url(img/github.ico);
 }
