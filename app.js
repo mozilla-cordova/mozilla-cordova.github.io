@@ -85,7 +85,7 @@ var IssueList = React.createClass({
 
           if(s.filter && 
              issue.title.toLowerCase().indexOf(s.filter) === -1 &&
-             issue.repo.toLowerCase().indexOf(s.filter) === -1) {
+            (!issue.repo || issue.repo.toLowerCase().indexOf(s.filter) === -1)) {
             return null;
           }
 
