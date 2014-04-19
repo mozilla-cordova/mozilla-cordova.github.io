@@ -79,7 +79,7 @@ var IssueList = React.createClass({
       dom.ul(
         { className: 'issues' },
         issues.map(function(issue) {
-          if(s.onlyPRs && !issue.pull_request.html_url) {
+          if(s.onlyPRs && (!issue.pull_request || !issue.pull_request.html_url)) {
             return null;
           }
 
@@ -110,9 +110,13 @@ var IssueList = React.createClass({
 
 var RepoList = React.createClass({
   render: function() {
+    var repos = this.props.repos.sort(function(a, b) {
+      return a.repo.localeCompare(b.repo);
+    });
+
     return dom.ul(
       null,
-      this.props.repos.map(function(repo) {
+      repos.map(function(repo) {
         return dom.li(
           null,
           dom.a({ href: "http://github.com/mozilla-cordova/" + repo.repo },
