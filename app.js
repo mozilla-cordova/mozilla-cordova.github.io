@@ -76,8 +76,8 @@ var IssueList = React.createClass({
                 onlyPRs: s.onlyPRs,
                 onFilter: this.applyFilter,
                 filter: this.state.filter.toLowerCase() }),
-      dom.ul(
-        { className: 'issues' },
+      dom.div(
+        { className: 'issues list-group' },
         issues.map(function(issue) {
           if(s.onlyPRs && (!issue.pull_request || !issue.pull_request.html_url)) {
             return null;
@@ -89,11 +89,14 @@ var IssueList = React.createClass({
             return null;
           }
 
-          return dom.li(
-            { className: 'issue' },
+          return dom.a(
+            {
+                className: 'issue list-group-item',
+                href: issue.html_url
+            },
             dom.i({ className: "icon " + issue.origin }),
-            dom.a(
-              { href: issue.html_url },
+            dom.span(
+              null,
               issue.title + ' (' + moment(issue.updated_at).format('MM-DD-YYYY') + ')'
             ),
             issue.repo ?
@@ -115,21 +118,28 @@ var RepoList = React.createClass({
     });
 
     return dom.ul(
-      null,
+      { className: 'repolist' },
       repos.map(function(repo) {
-        return dom.li(
-          null,
-          dom.a({ href: "http://github.com/mozilla-cordova/" + repo.repo },
-                repo.repo),
-          ' ',
-          (repo.status.indexOf('out-of-date') !== -1 ? 
-           dom.span({ className: 'label label-danger' }, 'out-of-date') :
-           null),
-          ' ',
-          (repo.status.indexOf('new-commits') !== -1 ? 
-           dom.span({ className: 'label label-success' }, 'new-commits') :
-           null)
-        );
+        var nodes = [];
+
+        nodes.push(dom.a({ href: "http://github.com/mozilla-cordova/" + repo.repo },
+            repo.repo));
+
+        if (repo.status.indexOf('out-of-date') !== -1) {
+            nodes.push(dom.span({ className: 'label label-danger' }, 'out-of-date'))
+        }
+
+        if (repo.status.indexOf('new-commits') !== -1) {
+            nodes.push(dom.span({ className: 'label label-success' }, 'new-commits'));
+        }
+
+        if (repo.topicBranches && repo.topicBranches.length > 0) {
+            repo.topicBranches.forEach(function (topic) {
+                nodes.push(dom.span({ className: 'label label-warning' }, topic));
+            });
+        }
+
+        return dom.li(null, nodes);
       })
     );
   }

@@ -43,24 +43,22 @@ header h1 {
     text-align: right;
 }
 
-ul.issues {
-    list-style: none;
-    padding: 0;
-    border: 1px solid #dadada;
-    border: 1px solid #dadada;
-}
-
-ul.issues li {
-    padding: .8em 1em;
-    line-height: 16px;
-}
-
-ul.issues .label {
+.issues .label {
     margin: 0 1em;
 }
 
-ul.issues li:nth-of-type(2n) {
-    background-color: #fafafa;
+.repolist .label {
+    margin: 0 .5em;
+}
+
+ul.repolist li {
+    list-style: none;
+    line-height: 1.8em;
+}
+
+.issues a,
+.repolist a {
+    color: #2A6496;
 }
 
 i.icon {
