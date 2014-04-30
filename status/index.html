@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport 2.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+  <title>Mozilla Cordova Status Page</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="../favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="js/lib/bootstrap/css/bootstrap.min.css" />
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/app.css" />
+  <script>
+    window._skel_config = {
+      prefix: '../css/style',
+      resetCSS: true,
+      breakpoints: {
+        wide: {
+          range: "501-",
+          containers: 900,
+          grid: { gutters: 50 } },
+        mobile: {
+          range: "-500",
+          containers: "fluid",
+          lockViewport: true,
+          grid: { collapse: true } }
+      }
+    };
+  </script>
+  <script src="../js/skel.min.js"></script>
+  <noscript>
+    <link rel="stylesheet" href="../css/skel-noscript.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style-wide.css" />
+  </noscript>
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie9.css"/><![endif]-->
+  <!--[if lte IE 8]>
+  <script src="../js/html5shiv.js"></script>
+  <link rel="stylesheet" href="../css/ie8.css"/><![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" href="../css/ie7.css"/><![endif]-->
+</head>
+<body>
+
+<!-- Home -->
+<div class="wrapper wrapper-style1">
+  <article class="container" id="top">
+    <div class="row">
+      <div class="4u">
+        <span class="me image image-full"><img src="../images/mozilla-cordova.png" alt="" /></span>
+      </div>
+      <div class="8u">
+        <header>
+          <h1>Mozilla Cordova Status</h1>
+        </header>
+        <p><a href="http://cordova.apache.org/">Cordova</a> is an open-source platform
+          for building multi-platform
+          applications using HTML, CSS
+          and JavaScript.</p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- GetStarted -->
+<div class="wrapper wrapper-style2">
+  <article id="getStarted">
+    <header>
+      <h2>Repos</h2>
+    </header>
+
+    <div class="container list-group">
+
+      <div class="row flush list-group-item">
+        <div class="3u">
+            <h3>Repo</h3>
+        </div>
+        <div class="2u">
+            <h3>Status</h3>
+        </div>
+        <div class="2u">
+            <h3>Topic Branches</h3>
+        </div>
+        <div class="5u">
+            <h3>Pull Requests</h3>
+        </div>
+      </div>
+      <div id="repos"></div>
+
+    </div>
+  </article>
+</div>
+
+<!-- Contact -->
+<div class="wrapper wrapper-style3">
+  <article id="contact">
+    <header>
+      <h2>Issues</h2>
+    </header>
+    <div id="issues" class="container">
+    </div>
+  </article>
+</div>
+
+<!-- Footer -->
+<div class="wrapper wrapper-style4 wrapper-thin">
+  <footer>
+    <ul id="copyright">
+      <li>&copy; 2014 Mozilla</li>
+      <li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+    </ul>
+  </footer>
+</div>
+
+<script src="js/lib/jquery-2.1.0.js"></script>
+<script src="js/lib/react.js"></script>
+<script src="js/lib/moment.min.js"></script>
+<script src="http://mozilla-cordova.paas.allizom.org/issues.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

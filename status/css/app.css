@@ -1,0 +1,58 @@
+/* Toolbar */
+
+.toolbar {
+    margin-bottom: 1em;
+}
+
+.toolbar label {
+    margin-right: 1em;
+}
+
+.toolbar .col-sm-6:nth-of-type(2) {
+    text-align: right;
+}
+
+/* Issues */
+
+.issues {
+  text-align: left;
+}
+
+.issues a {
+  text-decoration: none;
+}
+
+.issues .label {
+    margin: 0 1em;
+}
+
+/* Issue icons */
+
+i.icon {
+  display: inline-block;
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 1em;
+  vertical-align: middle;
+}
+
+.icon.jira {
+  background-image: url(../img/jira.ico);
+}
+
+.icon.github {
+  background-image: url(../img/github.ico);
+}
+
+/* Repos */
+
+.repolist {
+  text-align: left;
+}
+
+
+.repolist .label {
+  display: inline-block;
+  margin: 0 .3em;
+}
