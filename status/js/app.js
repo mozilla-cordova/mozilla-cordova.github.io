@@ -140,12 +140,29 @@ var RepoList = React.createClass({
                 nodes.push(dom.div({ className: '2u'}, topicBranches.length && topicBranches || dom.span(null, 'none')));
 
                 if (repo.mozPullRequests && repo.mozPullRequests.length > 0) {
+
+                    prs.push(dom.span(null, 'to mozilla-cordova:'));
+
                     repo.mozPullRequests.forEach(function(pr) {
                         prs.push(
-                            dom.span(null,
+                            dom.div({ className: 'truncate'},
                                 dom.a({href: pr.user_url}, pr.user),
                                 ': ',
-                                dom.a({href: pr.url}, pr.title)
+                                dom.a({href: pr.url, title: pr.title}, pr.title)
+                            ));
+                    });
+                }
+
+                if (repo.apachePullRequests && repo.apachePullRequests.length > 0) {
+
+                    prs.push(dom.span(null, 'to apache:'));
+
+                    repo.apachePullRequests.forEach(function(pr) {
+                        prs.push(
+                            dom.div({ className: 'truncate'},
+                                dom.a({href: pr.user_url}, pr.user),
+                                ': ',
+                                dom.a({href: pr.url, title: pr.title}, pr.title)
                             ));
                     });
                 }

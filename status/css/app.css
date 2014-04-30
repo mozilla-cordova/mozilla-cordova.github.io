@@ -20,6 +20,7 @@
 
 .issues a {
   text-decoration: none;
+  color: inherit;
 }
 
 .issues .label {
@@ -55,4 +56,17 @@ i.icon {
 .repolist .label {
   display: inline-block;
   margin: 0 .3em;
+}
+
+.repolist a {
+  color: inherit;
+}
+
+
+/* Misc */
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
