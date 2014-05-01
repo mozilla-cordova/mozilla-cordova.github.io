@@ -133,7 +133,10 @@ var RepoList = React.createClass({
 
                 if (repo.topicBranches && repo.topicBranches.length > 0) {
                     repo.topicBranches.forEach(function(topic) {
-                        topicBranches.push(dom.span({ className: 'label label-warning' }, topic));
+                        topicBranches.push(dom.a({
+                            className: 'label label-warning',
+                            href: 'https://github.com/mozilla-cordova/' + repo.repo + '/compare/mozilla-dev...' + topic
+                        }, topic));
                     });
                 }
 

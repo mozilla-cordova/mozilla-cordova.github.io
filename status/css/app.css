@@ -56,12 +56,13 @@ i.icon {
 .repolist .label {
   display: inline-block;
   margin: 0 .3em;
+  color: white;
+  line-height: 1.3;
 }
 
 .repolist a {
   color: inherit;
 }
-
 
 /* Misc */
 
