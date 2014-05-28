@@ -1,6 +1,83 @@
 ---
 layout: default
 title: Mozilla Cordova For Firefox OS
+plugins:
+  -
+    name: battery-status
+    repo: cordova-plugin-battery-status
+    status: Full support on next version
+  -
+    name: camera
+    repo: cordova-plugin-camera
+    status: Partial support, see documented quirks
+  -
+    name: console
+    repo: cordova-plugin-console
+    status: Not needed
+  -
+    name: contacts
+    repo: cordova-plugin-contacts
+    status: Partial support, see documented quirks
+  -
+    name: device
+    repo: cordova-plugin-device
+    status: Partial support, see documented quirks
+  -
+    name: device-motion
+    repo: cordova-plugin-device-motion
+    status: Full support
+  -
+    name: device-orientation
+    repo: cordova-plugin-device-orientation
+    status: Partial support, see documented quirks
+  -
+    name: dialogs
+    repo: cordova-plugin-dialogs
+    status: Full support
+  -
+    name: file
+    repo: cordova-plugin-file
+    status: Partial support on next release, see documented quirks
+  -
+    name: file-transfer
+    repo: cordova-plugin-file-transfer
+    status: Planned
+  -
+    name: geolocation
+    repo: cordova-plugin-geolocation
+    status: Full support
+  -
+    name: globalization
+    repo: cordova-plugin-globalization
+    status: Not implemented
+  -
+    name: inappbrowser
+    repo: cordova-plugin-inappbrowser
+    status: Partial support, see documented quirks
+  -
+    name: media
+    repo: cordova-plugin-media
+    status: Not implemented
+  -
+    name: media-capture
+    repo: cordova-plugin-media-capture
+    status: Not implemented
+  -
+    name: network-information
+    repo: cordova-plugin-network-information
+    status: Full support on next version
+  -
+    name: splashscreen
+    repo: cordova-plugin-splashscreen
+    status: Not needed
+  -
+    name: statusbar
+    repo: cordova-plugin-statusbar
+    status: Not needed
+  -
+    name: vibration
+    repo: cordova-plugin-vibration
+    status: Full support
 ---
 
 <!-- Home -->
@@ -8,7 +85,7 @@ title: Mozilla Cordova For Firefox OS
 	<header class="container" id="top">
 		<div class="row">
 			<div class="4u">
-				<span class="me image image-full"><img src="images/mozilla-cordova.png" alt="" /></span>
+				<a href="{{ site.baseurl }}"><span class="me image image-full"><img src="/images/mozilla-cordova.png" alt="logo" /></span></a>
 			</div>
 			<div class="8u">
 				<header>
@@ -85,6 +162,51 @@ title: Mozilla Cordova For Firefox OS
 					</section>
 				</div>
 			</div>
+		</div>
+	</article>
+</div>
+
+<!-- Plugin Status -->
+<div class="wrapper wrapper-style3_5">
+	<article id="pluginStatus">
+		<header>
+			<h2>Plugin Status</h2>
+			<span>See where we are and where we're headed.<br>
+				For current development status, check <a href="/status">the status page</a>.</span>
+		</header>
+
+		<div class="container list-group list-group-left ">
+
+			<div class="row flush list-group-item">
+				<div class="4u">
+					<h3>Plugin</h3>
+				</div>
+				<div class="6u">
+					<h3>Status</h3>
+				</div>
+				<div class="2u">
+					<h3>Docs</h3>
+				</div>
+			</div>
+
+			{% for plugin in page.plugins %}
+				<div class="row flush list-group-item">
+					<div class="4u">
+						<a href="https://github.com/apache/{{ plugin.repo }}">
+							{{ plugin.name }}
+						</a>
+					</div>
+					<div class="6u">
+						{{ plugin.status }}
+					</div>
+					<div class="2u">
+						<a href="https://github.com/apache/{{ plugin.repo }}/blob/master/doc/index.md">
+							<span class="fa fa-file-text-o"> Docs</span>
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+
 		</div>
 	</article>
 </div>

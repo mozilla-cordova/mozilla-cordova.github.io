@@ -424,6 +424,16 @@
 			position: relative;
 		}
 
+	.list-group-left
+	{
+		text-align: left;
+	}
+
+		.list-group-left a
+		{
+			color: inherit;
+		}
+
 /*********************************************************************************/
 /* Icons                                                                         */
 /* Powered by Font Awesome by Dave Gandy | http://fontawesome.io                 */
@@ -890,6 +900,11 @@
 	.wrapper-style3
 	{
 		background-color: #f4f4f4;
+	}
+
+	.wrapper-style3_5
+	{
+		background-color: #ededed;
 	}
 
 	.wrapper-style4

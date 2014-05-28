@@ -2,7 +2,6 @@
 layout: default
 title: Mozilla Cordova Status
 styles:
-  - js/lib/bootstrap/css/bootstrap.min.css
   - css/app.css
 ---
 
@@ -11,7 +10,7 @@ styles:
   <header class="container" id="top">
     <div class="row">
       <div class="4u">
-        <span class="me image image-full"><img src="../images/mozilla-cordova.png" alt="" /></span>
+		  <a href="{{ site.baseurl }}"><span class="me image image-full"><img src="/images/mozilla-cordova.png" alt="" /></span></a>
       </div>
       <div class="8u">
         <header>
@@ -26,11 +25,11 @@ styles:
   </header>
 </div>
 
-<!-- GetStarted -->
+<!-- Repo status -->
 <div class="wrapper wrapper-style2">
-  <article id="getStarted">
+  <article id="repoStatus">
     <header>
-      <h2>Repos</h2>
+      <h2>Repositories</h2>
     </header>
 
     <div class="container list-group">
@@ -55,9 +54,9 @@ styles:
   </article>
 </div>
 
-<!-- Contact -->
+<!-- Issues -->
 <div class="wrapper wrapper-style3">
-  <article id="contact">
+  <article id="issuesList">
     <header>
       <h2>Issues</h2>
     </header>
@@ -66,8 +65,8 @@ styles:
   </article>
 </div>
 
-<script src="js/lib/jquery-2.1.0.js"></script>
-<script src="js/lib/react.js"></script>
-<script src="js/lib/moment.min.js"></script>
+<script src="/js/lib/jquery-2.1.0.js"></script>
+<script src="/js/lib/react.js"></script>
+<script src="/js/lib/moment.min.js"></script>
 <script src="http://mozilla-cordova.paas.allizom.org/issues.js"></script>
 <script src="js/app.js"></script>
