@@ -1,54 +1,23 @@
-This is a repo for Mozilla to track our Cordova work. It is served at
-http://mozilla-cordova.github.io/ and aggregates all the issues/PRs
-across the repos inside mozilla-cordova. Each Cordova plugin is a
-separate repo forked from the official Apache repo.
+This is the repository for Mozilla cordova site served at http://mozilla-cordova.github.io/. It contains two core pages, 
+the welcome page and the [status page](http://mozilla-cordova.github.io/status/index.html).
 
-You should file issues for a plugin at the plugin's repository, not
-here.
+The welcome page is intended for general public with information on how to use cordova on Firefox OS. The status page
+is intended for platform developers. It shows development status for platform and plugins, plus an aggregate of all 
+issues/PRs across the cordova repositories.
 
-## Installing Plugins
+## Building the site
 
-If you want to test our dev version of a plugin, you can
-install it like this:
+The site is built using [github's jekyll](https://help.github.com/articles/using-jekyll-with-pages). To run the site
+locally, run:
 
 ```
-$ cordova plugin add https://github.com/mozilla-cordova/cordova-plugin-camera.git
+$ bundle exec jekyll serve --watch
 ```
 
-We frequently push our work to the official Apache repos, so you only
-need to do that if you want the latest and greated. Updates will be
-pushed weekly on average.
+Then navigate to `http://localhost:4000`.
 
-If you just need the latest released version, just simply do `cordova
-plugin add org.apache.cordova.camera`. Replace "camera" with any of
-the plugins above.
+## Status page
 
-## Contributing
-
-To contribute, fork any of the plugin repos and open PRs. It's best to
-let us know if you do that, by opening an issue here, or contact us in
-`#apps` on irc.mozilla.org.
-
-## Status
-
-Plugin Status (see the individual plugin docs for details):
-
-* [camera](https://github.com/mozilla-cordova/cordova-plugin-camera) - partial (many of the settings are ignore)
-* [contacts](https://github.com/mozilla-cordova/cordova-plugin-contacts) - partial (read-only)
-* [device](https://github.com/mozilla-cordova/cordova-plugin-device) - partial (most device properties are null)
-* [device-motion](https://github.com/mozilla-cordova/cordova-plugin-device-motion) - full (needs to be confirmed)
-* [device-orientation](https://github.com/mozilla-cordova/cordova-plugin-device-orientation) - mostly (one option is ignored)
-* [geolocation](https://github.com/mozilla-cordova/cordova-plugin-geolocation) - full
-* [vibration](https://github.com/mozilla-cordova/cordova-plugin-vibration) - full
-
-Missing plugins:
-
-* battery status
-* filesystem
-* file transfer
-* globalization
-* in app browser
-* media
-* media capture
-* network information
-* splash screen
+The status page requires a service to aggregate jira and github issues. The service also gathers development status
+information from github. For more information on running the service, see
+[the github repository](https://github.com/mozilla-cordova/status-server).
