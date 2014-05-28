@@ -1,0 +1,9 @@
+# Site settings
+title: Mozilla Cordova
+description: "Build Firefox OS compatible cross-platform apps using HTML, CSS and Javascript."
+baseurl: "/"
+url: "http://mozilla-cordova.github.io/"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
