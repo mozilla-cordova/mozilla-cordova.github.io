@@ -109,27 +109,16 @@ var RepoList = React.createClass({
         });
 
         return dom.div(
-            { className: 'repolist' },
+            null,
             repos.map(function(repo) {
                 var nodes = [],
-                    state = [],
                     topicBranches = [],
                     prs = [];
 
-                nodes.push(dom.div({ className: '3u'},
+                nodes.push(dom.div({ className: '4u'},
                     dom.a({ href: "http://github.com/mozilla-cordova/" + repo.repo },
                         repo.repo)
                 ));
-
-                if (repo.status.indexOf('out-of-date') !== -1) {
-                    state.push(dom.span({ className: 'label label-danger' }, 'out-of-date'));
-                }
-
-                if (repo.status.indexOf('new-commits') !== -1) {
-                    state.push(dom.span({ className: 'label label-success' }, 'new-commits'));
-                }
-
-                nodes.push(dom.div({ className: '2u'}, state.length && state || dom.span(null, 'none')));
 
                 if (repo.topicBranches && repo.topicBranches.length > 0) {
                     repo.topicBranches.forEach(function(topic) {
@@ -140,7 +129,7 @@ var RepoList = React.createClass({
                     });
                 }
 
-                nodes.push(dom.div({ className: '2u'}, topicBranches.length && topicBranches || dom.span(null, 'none')));
+                nodes.push(dom.div({ className: '3u'}, topicBranches.length && topicBranches || dom.span(null, 'none')));
 
                 if (repo.mozPullRequests && repo.mozPullRequests.length > 0) {
 
