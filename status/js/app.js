@@ -116,7 +116,7 @@ var RepoList = React.createClass({
                     prs = [];
 
                 nodes.push(dom.div({ className: '4u'},
-                    dom.a({ href: "http://github.com/mozilla-cordova/" + repo.repo },
+                    dom.a({ href: "http://github.com/apache/" + repo.repo },
                         repo.repo)
                 ));
 
