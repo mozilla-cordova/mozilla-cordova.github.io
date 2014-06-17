@@ -131,11 +131,9 @@ var RepoList = React.createClass({
 
                 nodes.push(dom.div({ className: '3u'}, topicBranches.length && topicBranches || dom.span(null, 'none')));
 
-                if (repo.mozPullRequests && repo.mozPullRequests.length > 0) {
+                if (repo.apachePullRequests && repo.apachePullRequests.length > 0) {
 
-                    prs.push(dom.span(null, 'to mozilla-cordova:'));
-
-                    repo.mozPullRequests.forEach(function(pr) {
+                    repo.apachePullRequests.forEach(function(pr) {
                         prs.push(
                             dom.div({ className: 'truncate'},
                                 dom.a({href: pr.user_url}, pr.user),
@@ -145,11 +143,11 @@ var RepoList = React.createClass({
                     });
                 }
 
-                if (repo.apachePullRequests && repo.apachePullRequests.length > 0) {
+                if (repo.mentionsPullRequests && repo.mentionsPullRequests.length > 0) {
 
-                    prs.push(dom.span(null, 'to apache:'));
+                    prs.push(dom.span(null, 'Firefox mentions:'));
 
-                    repo.apachePullRequests.forEach(function(pr) {
+                    repo.mentionsPullRequests.forEach(function(pr) {
                         prs.push(
                             dom.div({ className: 'truncate'},
                                 dom.a({href: pr.user_url}, pr.user),
