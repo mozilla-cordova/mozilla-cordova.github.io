@@ -5,79 +5,78 @@ plugins:
   -
     name: battery-status
     repo: cordova-plugin-battery-status
-    status: Full support on next version
+    support: full
+    comment: will be available on next version
   -
     name: camera
     repo: cordova-plugin-camera
-    status: Partial support, see documented quirks
+    support: partial
   -
     name: console
     repo: cordova-plugin-console
-    status: Not needed
+    support: full
   -
     name: contacts
     repo: cordova-plugin-contacts
-    status: Partial support, see documented quirks
+    support: partial
   -
     name: device
     repo: cordova-plugin-device
-    status: Partial support, see documented quirks
+    support: partial
   -
     name: device-motion
     repo: cordova-plugin-device-motion
-    status: Full support
+    support: full
   -
     name: device-orientation
     repo: cordova-plugin-device-orientation
-    status: Partial support, see documented quirks
+    support: partial
   -
     name: dialogs
     repo: cordova-plugin-dialogs
-    status: Full support
+    support: full
   -
     name: file
     repo: cordova-plugin-file
-    status: Partial support on next release, see documented quirks
+    support: partial
   -
     name: file-transfer
     repo: cordova-plugin-file-transfer
-    status: Planned
+    support: planned
   -
     name: geolocation
     repo: cordova-plugin-geolocation
-    status: Full support
+    support: full
   -
     name: globalization
     repo: cordova-plugin-globalization
-    status: Not implemented
+    support: planned
   -
     name: inappbrowser
     repo: cordova-plugin-inappbrowser
-    status: Partial support, see documented quirks
+    support: partial
   -
     name: media
     repo: cordova-plugin-media
-    status: Not implemented
   -
     name: media-capture
     repo: cordova-plugin-media-capture
-    status: Not implemented
   -
     name: network-information
     repo: cordova-plugin-network-information
-    status: Full support on next version
+    support: full
   -
     name: splashscreen
     repo: cordova-plugin-splashscreen
-    status: Not needed
+    support: notNeeded
   -
     name: statusbar
     repo: cordova-plugin-statusbar
-    status: Not needed
+    support: notNeeded
   -
     name: vibration
     repo: cordova-plugin-vibration
-    status: Full support
+    support: full
 ---
 
 <!-- Home -->
@@ -178,31 +177,37 @@ plugins:
 		<div class="container list-group list-group-left ">
 
 			<div class="row flush list-group-item">
-				<div class="4u">
-					<h3>Plugin</h3>
+				<div class="5u">
+					<h3>Plugin Name</h3>
 				</div>
-				<div class="6u">
+				<div class="7u">
 					<h3>Status</h3>
-				</div>
-				<div class="2u">
-					<h3>Docs</h3>
 				</div>
 			</div>
 
 			{% for plugin in page.plugins %}
 				<div class="row flush list-group-item">
-					<div class="4u">
+					<div class="5u plugin-name">
 						<a href="https://github.com/apache/{{ plugin.repo }}">
-							{{ plugin.name }}
-						</a>
+							<i class="fa fa-code-fork"></i>
+							{{ plugin.name }}</a>
 					</div>
-					<div class="6u">
-						{{ plugin.status }}
-					</div>
-					<div class="2u">
+					<div class="7u plugin-status">
 						<a href="https://github.com/apache/{{ plugin.repo }}/blob/master/doc/index.md">
-							<span class="fa fa-file-text-o"> Docs</span>
+						{% case plugin.support %}
+							{% when 'full' %}
+								<span class="label label-success">Full support</span>
+							{% when 'partial' %}
+								<span class="label label-warning">Partial support</span>
+							{% when 'planned' %}
+								<span class="label label-info">Planned</span>
+							{% when 'notNeeded' %}
+								<span class="label label-default">Not applicable</span>
+							{% else %}
+								<span class="label label-danger">Not supported</span>
+						{% endcase %}
 						</a>
+						{{ plugin.comment }}
 					</div>
 				</div>
 			{% endfor %}
