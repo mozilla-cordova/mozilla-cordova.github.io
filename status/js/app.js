@@ -112,24 +112,12 @@ var RepoList = React.createClass({
             null,
             repos.map(function(repo) {
                 var nodes = [],
-                    topicBranches = [],
                     prs = [];
 
-                nodes.push(dom.div({ className: '4u'},
+                nodes.push(dom.div({ className: '5u status-table-name'},
                     dom.a({ href: "http://github.com/apache/" + repo.repo },
                         repo.repo)
                 ));
-
-                if (repo.topicBranches && repo.topicBranches.length > 0) {
-                    repo.topicBranches.forEach(function(topic) {
-                        topicBranches.push(dom.a({
-                            className: 'label label-warning',
-                            href: 'https://github.com/mozilla-cordova/' + repo.repo + '/compare/mozilla-dev...' + topic
-                        }, topic));
-                    });
-                }
-
-                nodes.push(dom.div({ className: '3u'}, topicBranches.length && topicBranches || dom.span(null, 'none')));
 
                 if (repo.apachePullRequests && repo.apachePullRequests.length > 0) {
 
@@ -157,7 +145,7 @@ var RepoList = React.createClass({
                     });
                 }
 
-                nodes.push(dom.div({ className: '5u'}, prs.length && prs || dom.span(null, 'none')));
+                nodes.push(dom.div({ className: '7u status-table-status'}, prs.length && prs || dom.span(null, 'none')));
 
                 return dom.div({ className: 'row flush list-group-item' }, nodes);
             })

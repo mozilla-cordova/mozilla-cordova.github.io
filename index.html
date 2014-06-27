@@ -187,12 +187,11 @@ plugins:
 
 			{% for plugin in page.plugins %}
 				<div class="row flush list-group-item">
-					<div class="5u plugin-name">
+					<div class="5u status-table-name">
 						<a href="https://github.com/apache/{{ plugin.repo }}">
-							<i class="fa fa-code-fork"></i>
 							{{ plugin.name }}</a>
 					</div>
-					<div class="7u plugin-status">
+					<div class="7u status-table-status plugin-status">
 						<a href="https://github.com/apache/{{ plugin.repo }}/blob/master/doc/index.md">
 						{% case plugin.support %}
 							{% when 'full' %}

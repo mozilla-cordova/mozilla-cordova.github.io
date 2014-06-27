@@ -1036,14 +1036,17 @@
 		}
 
 /*********************************************************************************/
-/* Plugin Status                                                                 */
+/* Status Tables                                                                 */
 /*********************************************************************************/
 
-	.plugin-name {
+	.status-table-name {
 		font-size: 1.2em;
 	}
 
 	.plugin-status a {
-		text-decoration: none;
+		color: #fff;
+	}
+
+	.plugin-status .label {
 		color: inherit;
 	}
