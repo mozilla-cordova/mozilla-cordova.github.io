@@ -25,6 +25,8 @@ var IssueList = React.createClass({
                 issue.created_at = new Date(issue.created_at);
                 issue.updated_at = new Date(issue.updated_at);
                 issue.origin = 'github';
+                issue.assigneeName = issue.assignee && issue.assignee.login;
+                issue.assigneeAvatar = issue.assignee && issue.assignee.avatar_url;
                 return issue;
             }));
 
@@ -38,6 +40,8 @@ var IssueList = React.createClass({
                 issue.html_url = 'https://issues.apache.org/jira/browse/' + issue.key;
                 issue.origin = 'jira';
                 issue.status = issue.fields.status.name;
+                issue.assigneeName = issue.fields.assignee && issue.fields.assignee.name;
+                issue.assigneeAvatar = issue.fields.assignee && issue.fields.assignee.avatarUrls["32x32"];
                 return issue;
             }));
         }
@@ -77,15 +81,19 @@ var IssueList = React.createClass({
                             href: issue.html_url
                         },
                         dom.i({ className: "icon " + issue.origin }),
-                        dom.span(
-                            null,
-                                issue.title + ' (' + moment(issue.updated_at).format('MM-DD-YYYY') + ')'
-                        ),
+                        dom.span({className: "updated-at"}, moment(issue.updated_at).format('MM-DD-YYYY')),
+                        dom.span(null, issue.title),
                         issue.repo ?
                             dom.span({ className: "label label-default" }, issue.repo) :
                             dom.span({ className: "label label-info" }, issue.status),
                         (issue.pull_request && issue.pull_request.html_url) ?
-                            dom.span({ className: "label label-danger" }, 'PR') : null
+                            dom.span({ className: "label label-danger" }, 'PR') : null,
+                        issue.assigneeName ?
+                            dom.span(null,
+                                dom.span(null, "Assigned to:"),
+                                dom.img({className: "avatar", src: issue.assigneeAvatar}),
+                                issue.assigneeName) :
+                            null
                     );
                 }.bind(this))
             )

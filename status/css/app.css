@@ -24,7 +24,18 @@
 }
 
 .issues .label {
-    margin: 0 1em;
+    margin: 0 7px;
+}
+
+.issue .updated-at {
+    margin-right: 7px;
+}
+
+.issue .avatar {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: 0 7px;
 }
 
 /* Issue icons */
