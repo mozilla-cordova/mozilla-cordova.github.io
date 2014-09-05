@@ -10,7 +10,7 @@
 
 	body
 	{
-    font-size: 11pt;
+	font-size: 11pt;
 	}
 
 	h1
@@ -107,20 +107,20 @@
 
 	.wrapper
 	{
-    padding: 5em 0 5em 0;
+	padding: 5em 0 5em 0;
 		text-align: center;
 	}
 	
 		.wrapper-first
 		{
-      padding-top: 9em;
+	  padding-top: 9em;
 		}
 
-    .wrapper-style4 .row-special
-    {
-      margin: 2em 0 0 0;
-      padding: 2em 0 2em 0;
-    }
+	.wrapper-style4 .row-special
+	{
+	  margin: 2em 0 0 0;
+	  padding: 2em 0 2em 0;
+	}
 
 /*********************************************************************************/
 /* Nav                                                                           */
@@ -167,6 +167,13 @@
 		{
 			width: 20em;
 			height: 20em;
+			margin: 0;
+		}
+
+		#top .me.mini-me
+		{
+			width: 10em;
+			height: 10em;
 			margin: 0;
 		}
 
