@@ -59,18 +59,18 @@ i.icon {
 
 /* Repos */
 
-.repolist {
+.list-group {
   text-align: left;
 }
 
-.repolist .label {
+.list-group .label {
   display: inline-block;
   margin: 0 .3em;
   color: white;
   line-height: 1.3;
 }
 
-.repolist a {
+.list-group a {
   color: inherit;
 }
 
