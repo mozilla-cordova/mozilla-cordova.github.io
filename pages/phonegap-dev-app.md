@@ -2,6 +2,7 @@
 layout: page
 title: Installing the Phonegap Developer App preview for Firefox OS
 author: Rodrigo Silveira
+author_twitter: rodms10
 ---
 
 The Phonegap Developer App allows Phonegap developers to easily run their app in multiple platforms, without the need to install SDKs or have a developer subscription. You can pair your app with multiple devices at a time and any changes you make get instantly shown on the devices. For more information on it' usage, visit [the developer app page](http://app.phonegap.com/).

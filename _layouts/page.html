@@ -22,7 +22,7 @@
             </div>
         </div>
     </header>
-    <article class="container">
+    <article class="container page-content">
         <header>
             <h2>{{ page.title }}</h2>
         </header>
@@ -30,7 +30,13 @@
         {{ content }}
 
         {% if page.author %}
-        <div class="author">by {{page.author}}</div>
+            <div class="author">by
+                {% if page.author_twitter %}
+                    <a href="http://twitter.com/{{ page.author_twitter }}">{{page.author}}</a>
+                {% else %}
+                    {{page.author}}
+                {% endif %}
+            </div>
         {% endif %}
     </article>
 </div>
