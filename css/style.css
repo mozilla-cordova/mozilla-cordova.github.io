@@ -1028,13 +1028,25 @@
         font-size: 1.2em;
     }
 
-        .page-content p code
+        .page-content code
         {
             color: #888;
             background-color: #F7FAFB;
             border-radius: 2px;
             border: 1px solid #DDD;
             padding: 0 5px;
+        }
+
+    .page-content .video
+    {
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+        .page-content .video iframe
+        {
+            width: 100%;
+            max-width: 560px;
         }
 
 /*********************************************************************************/
@@ -1093,6 +1105,14 @@
     padding: 8px;
     border: 0;
     border-radius: 8px;
+}
+
+.highlight code
+{
+    color: inherit;
+    background-color: inherit;
+    border: 0;
+    padding: 0;
 }
 
 .highlight .c { color: #999988; font-style: italic } /* Comment */
