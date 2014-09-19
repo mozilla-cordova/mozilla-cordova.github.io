@@ -10,7 +10,7 @@
 
 	body
 	{
-    font-size: 11pt;
+	font-size: 11pt;
 	}
 
 	h1
@@ -107,20 +107,20 @@
 
 	.wrapper
 	{
-    padding: 5em 0 5em 0;
+	padding: 5em 0 5em 0;
 		text-align: center;
 	}
 	
 		.wrapper-first
 		{
-      padding-top: 9em;
+	  padding-top: 9em;
 		}
 
-    .wrapper-style4 .row-special
-    {
-      margin: 2em 0 0 0;
-      padding: 2em 0 2em 0;
-    }
+	.wrapper-style4 .row-special
+	{
+	  margin: 2em 0 0 0;
+	  padding: 2em 0 2em 0;
+	}
 
 /*********************************************************************************/
 /* Nav                                                                           */
@@ -174,7 +174,7 @@
 		{
 			margin-top: 0.35em;
 		}
-	
+
 		#top p
 		{
 			font-size: 1.5em;
@@ -189,7 +189,29 @@
 		{
 			font-size: 0.9em;
 		}
-		
+
+/*********************************************************************************/
+/* Page header                                                                   */
+/*********************************************************************************/
+
+.page-header > div
+{
+    height: 10em;
+}
+
+.page-header .image
+{
+    width: 10em;
+    height: 10em;
+    margin: 0;
+}
+
+.page-header h2 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /*********************************************************************************/
 /* Copyright                                                                     */
 /*********************************************************************************/

@@ -7,3 +7,4 @@ url: "http://mozilla-cordova.github.io/"
 # Build settings
 markdown: kramdown
 permalink: pretty
+highlighter: pygments

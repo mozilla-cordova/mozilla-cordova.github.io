@@ -25,9 +25,26 @@ styles:
   </header>
 </div>
 
-<!-- Repo status -->
+<!-- Documentation and repo status -->
 <div class="wrapper wrapper-style2">
-  <article id="repoStatus">
+
+    <!-- List of available pages -->
+    <article id="documentation">
+        <header>
+            <h2>Documentation</h2>
+        </header>
+
+        <div class="container list-group status-table-name">
+                {% for site_page in site.pages %}
+                {% if site_page.layout == "page" %}
+                <div class="row flush list-group-item"><a href="{{ site_page.url }}"> {{ site_page.title }}</a></div>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </article>
+
+  <article id="repo-status">
     <header>
       <h2>Repositories</h2>
     </header>

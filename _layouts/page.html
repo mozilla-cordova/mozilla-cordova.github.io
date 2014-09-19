@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport 2.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+{% include head.html %}
+
+<body>
+
+<!-- Header -->
+<div class="wrapper wrapper-thin wrapper-style2">
+    <header class="container" id="top">
+        <div class="row page-header">
+            <div>
+                <a href="/status"><span class="image"><img src="/images/mozilla-cordova.png" alt="logo" /></span></a>
+            </div>
+            <div>
+                <h2>Mozilla Cordova Developer Site</h2>
+            </div>
+        </div>
+    </header>
+    <article class="container page-content">
+        <header>
+            <h2>{{ page.title }}</h2>
+        </header>
+
+        {{ content }}
+
+        {% if page.author %}
+            <div class="author">by
+                {% if page.author_twitter %}
+                    <a href="http://twitter.com/{{ page.author_twitter }}">{{page.author}}</a>
+                {% else %}
+                    {{page.author}}
+                {% endif %}
+            </div>
+        {% endif %}
+    </article>
+</div>
+
+<!-- Footer -->
+{% include footer.html %}
+
+
+</body>
+</html>
