@@ -9,6 +9,8 @@ Thank you for your interest in contributing to Firefox OS Cordova initiative!
 
 [Cordova](http://cordova.apache.org/) is an open source toolset for writing multi-platform native mobile applications using web technology. Cordova provides you with standards based javascript APIs and the plumbing necessary to access the device's internals, such as battery status, GPS and camera. Each mobile operating system has its own platform implementation for doing the communication between cordova's javascript API and the native OS code.
 
+This documentation is aimed at developers who want to understand the inner workings of Cordova. To learn more about how to use cordova to create a Firefox OS app, check out [our MDN page](https://developer.mozilla.org/en-US/Apps/Tools_and_frameworks/Cordova_support_for_Firefox_OS).
+
 Cordova is written in [node.js](http://nodejs.org/), you just need to understand javascript to work on it.
 
 ## The repositories
@@ -23,6 +25,8 @@ Cordova code is organized into multiple repositories. The main ones you need to 
 ## Running it locally
 
 To work on the platform, you need to run on the latest code from the repositories. It's super helpful to run cordova entirely from local files so that you can edit code and see the effects. With the multiple repository organization used by cordova, this can be tricky. Make sure you have [git](http://git-scm.com/downloads) and [node.js](http://nodejs.org/download/) installed. A [github](https://github.com/) account will be handy if you plan to send us your changes. The prompt samples below are using bash, modify accordingly for windows.
+
+_Note: On Linux and OS X you may need to prefix some npm commands with `sudo`. See [this stackoverflow thread for more info](https://developer.mozilla.org/en-US/Apps/Tools_and_frameworks/Cordova_support_for_Firefox_OS)_
 
 ### cordova-cli & cordova-lib
 
