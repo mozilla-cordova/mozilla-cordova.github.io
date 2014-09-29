@@ -83,7 +83,12 @@ To add the platform, all you need to run is:
 $ ../cordova-cli/bin/cordova platform add firefoxos
 {% endhighlight %}
 
-That's it. If you make any changes to `cordova-firefoxos`, remove and add the platform again to make sure you have the latest.
+That's it. If you make any changes to `cordova-firefoxos`, remove and add the platform again to make sure you have the latest:
+
+{% highlight bash %}
+$ ../cordova-cli/bin/cordova platform remove firefoxos
+$ ../cordova-cli/bin/cordova platform add firefoxos
+{% endhighlight %}
 
 ### Plugins
 
