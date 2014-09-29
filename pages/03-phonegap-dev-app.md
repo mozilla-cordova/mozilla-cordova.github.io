@@ -71,7 +71,11 @@ Now we need to use the development version of `cordova-firefoxos`. In your root 
 }
 {% endhighlight %}
 
-Make sure you have the correct path to `cordova-firefoxos` in the `uri` property.
+Make sure you have the correct path to `cordova-firefoxos` in the `uri` property. To add Firefox OS platform to your project run:
+
+{% highlight bash %}
+$ ../cordova-cli/bin/cordova platform add firefoxos
+{% endhighlight %}
 
 Time to start the server:
 
