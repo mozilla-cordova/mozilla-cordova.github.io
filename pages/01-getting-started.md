@@ -7,11 +7,11 @@ author_twitter: rodms10
 
 Thank you for your interest in contributing to Firefox OS Cordova initiative!
 
-[Cordova](http://cordova.apache.org/) is an open source toolset for writing multi-platform native mobile applications using web technology. Cordova provides you with standards based javascript APIs and the plumbing necessary to access the device's internals, such as battery status, GPS and camera. Each mobile operating system has its own platform implementation for doing the communication between cordova's javascript API and the native OS code.
+[Cordova](http://cordova.apache.org/) is an open source toolset for writing multi-platform native mobile applications using web technology. Cordova provides you with standards based JavaScript APIs and the plumbing necessary to access the device's internals, such as battery status, GPS and camera. Each mobile operating system has its own platform implementation for doing the communication between cordova's JavaScript API and the native OS code.
 
 This documentation is aimed at developers who want to understand the inner workings of Cordova. To learn more about how to use cordova to create a Firefox OS app, check out [our MDN page](https://developer.mozilla.org/en-US/Apps/Tools_and_frameworks/Cordova_support_for_Firefox_OS).
 
-Cordova is written in [node.js](http://nodejs.org/), you just need to understand javascript to work on it.
+Cordova is written in [node.js](http://nodejs.org/), you just need to understand JavaScript to work on it.
 
 ## The repositories
 
