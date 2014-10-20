@@ -17,7 +17,7 @@ Cordova is written in [node.js](http://nodejs.org/), you just need to understand
 
 Cordova code is organized into multiple repositories. The main ones you need to be aware of for Firefox OS development are `cordova-cli`, `cordova-firefoxos` and `cordova-plugin-*`. Here is a brief description of them:
 
-- `cordova-cli` - is where the entry point code for the command line tools is located. There are no platform specific code left and most of the functionality now lives in `cordova-lib`.
+- `cordova-cli` - is where the entry point code for the command line tools is located. There is no platform specific code here; most of the functionality lives in `cordova-lib`.
 - `cordova-lib` - contains modules used mainly by `cordova-cli`. There is some platform specific code under `cordova-lib/src/cordova/metadata` which are config parsers. Firefox OS uses it to get the initial version of the manifest with the correct app name and other values.
 - `cordova-firefoxos` - is the repository for the Firefox OS platform tools. The code here is responsible for handling Firefox OS cordova commands.
 - `cordova-plugin-*` - are repositories for plugins. A plugin repository contains code for each supported platform too.
