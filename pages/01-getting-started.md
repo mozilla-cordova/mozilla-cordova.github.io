@@ -19,18 +19,20 @@ Cordova code is organized into multiple repositories. The main ones you need to 
 
 - `cordova-cli` - is where the entry point code for the command line tools is located. There is no platform specific code here; most of the functionality lives in `cordova-lib`.
 - `cordova-lib` - contains modules used mainly by `cordova-cli`. There is some platform specific code under `cordova-lib/src/cordova/metadata` which are config parsers. Firefox OS uses it to get the initial version of the manifest with the correct app name and other values.
-- `cordova-firefoxos` - is the repository for the Firefox OS platform tools. The code here is responsible for handling Firefox OS cordova commands.
+- `cordova-firefoxos` - is the repository for the Firefox OS platform tools. The code here is responsible for handling Firefox OS Cordova commands.
 - `cordova-plugin-*` - are repositories for plugins. A plugin repository contains code for each supported platform too.
 
 ## Running it locally
 
-To work on the platform, you need to run on the latest code from the repositories. It's super helpful to run cordova entirely from local files so that you can edit code and see the effects. With the multiple repository organization used by cordova, this can be tricky. Make sure you have [git](http://git-scm.com/downloads) and [node.js](http://nodejs.org/download/) installed. A [github](https://github.com/) account will be handy if you plan to send us your changes. The prompt samples below are using bash, modify accordingly for windows.
+To work on the platform, you need to run the latest code from the repositories. It's super helpful to run Cordova entirely from local files so that you can edit code and see the effects. With the multiple repository structure used by Cordova, this can be tricky.
+
+Make sure you have [git](http://git-scm.com/downloads) and [node.js](http://nodejs.org/download/) installed. A [GitHub](https://github.com/) account will be handy if you plan to send us your changes. The prompt samples below are using bash, modify accordingly for Windows.
 
 _Note: On Linux and OS X you may need to prefix some npm commands with `sudo`. See [this stackoverflow thread for more info](https://developer.mozilla.org/en-US/Apps/Tools_and_frameworks/Cordova_support_for_Firefox_OS)_
 
 ### cordova-cli & cordova-lib
 
-First let's get `cordova-cli` and `cordova-lib` from apache's github repository. From the directory you'd like to keep cordova code run:
+First, let's get `cordova-cli` and `cordova-lib` from Apache's GitHub repository. From the directory you'd like to keep Cordova code run:
 
 {% highlight bash %}
 $ git clone https://github.com/apache/cordova-cli.git
@@ -48,24 +50,24 @@ $ npm install
 $ cd ..
 {% endhighlight %}
 
-The executable cordova script is located at `cordova-cli/bin/cordova`. From now on this is the executable we'll use for all our cordova command line needs. You can add it to your `PATH` if you want, I'll use the relative path for clarity.
+The executable Cordova script is located at `cordova-cli/bin/cordova`. From now on this is the executable we'll use for all our Cordova command line needs. You can add it to your `PATH` if you want; I'll use the relative path for clarity.
 
 ### cordova-firefoxos
 
-Next, let's clone Firefox OS platform bits from `cordova-firefoxos` repository:
+Next, let's clone the Firefox OS platform bits from the `cordova-firefoxos` repository:
 
 {% highlight bash %}
 $ git clone https://github.com/apache/cordova-firefoxos.git
 {% endhighlight %}
 
-No need to install dependencies for `cordova-firefoxos`, they're already part of the repository. We can now create a new cordova app by running `cordova create`. Let's create the app in `myapp` folder and give it the even more original project name of `io.myapp` and name it `myapp`. To create the app run:
+No need to install dependencies for `cordova-firefoxos`, they're already part of the repository. We can now create a new Cordova app by running `cordova create`. Let's create the app in `myapp` folder, giving it the even more original project name of `io.myapp` and naming it `myapp`. Just run this:
 
 {% highlight bash %}
-$ cordova-cli/bin/cordova create myapp io.myapp "My cordova app"
+$ cordova-cli/bin/cordova create myapp io.myapp "My Cordova app"
 $ cd myapp
 {% endhighlight %}
 
-There's a little trick to tell cordova to use the local `cordova-firefoxos` platform code we just downloaded. In your project directory, myapp in our case, create a folder called `.cordova` and file named `config.json` with the following contents:
+There's a little trick to tell Cordova to use the local `cordova-firefoxos` platform code we just downloaded. In your project directory (`myapp` in our case), create a folder called `.cordova`, and a file named `config.json` with the following contents:
 
 {% highlight json %}
 {
@@ -110,6 +112,6 @@ $ cd myapp
 $ ../cordova-cli/bin/cordova plugin add ../cordova-plugin-contacts
 {% endhighlight %}
 
-To see changes you made to plugin code you have to remove then add the plugin again. To remove the plugin you need to use the plugin name, not the path. Running `../cordova-cli/bin/cordova plugin ls` will show you the names of installed plugins. For example, to remove the contacts plugin run `../cordova-cli/bin/cordova plugin remove org.apache.cordova.contacts`.
+To see changes you made to plugin code, you have to remove and then add the plugin again. To remove the plugin you need to use the plugin name, not the path. Running `../cordova-cli/bin/cordova plugin ls` will show you the names of installed plugins. For example, to remove the contacts plugin run `../cordova-cli/bin/cordova plugin remove org.apache.cordova.contacts`.
 
 That's it, you are now running the latest and greatest versions of it all!
